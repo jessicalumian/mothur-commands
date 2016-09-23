@@ -6,6 +6,11 @@ mothur > system(ls) # this is for when mothur is already running
 ```
 Note: `mothur >` should always be present at beginning of command line as this signifies being inside mothur. I won't be typing it out in each command.
 
+Also, at any time during session, run
+```shell
+get.current()
+``` 
+
 First, start mothur. Navigate to mothur directory and type:
 ```shell
 ./mothur
