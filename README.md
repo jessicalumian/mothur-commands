@@ -11,6 +11,8 @@ Also, at any time during session, run
 get.current()
 ``` 
 
+## Start mothur and set up directories
+
 First, start mothur. Navigate to mothur directory and type:
 ```shell
 ./mothur
@@ -21,6 +23,8 @@ Set input and output directories
 set.dir(input=../path/goes/here)
 set.dir(output=../path/goes/here)
 ```
+
+## Get rid of errors from sequencing or PCR
 
 Make input file that has read information. This makes stability.files file, which makes a table with three columns: sample_ID R1 R2
 ```shell
