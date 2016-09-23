@@ -31,3 +31,8 @@ Use stability.contigs.reports file generated in previous step to make summary st
 ```shell
 summary.seqs(fasta=stability.trim.contigs.fasta)
 ```
+
+Now, remove reads longer than 275 bp (or change length) and get rid of ambiguous bases:
+```shell
+mothur > screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, summary=stability.trim.contigs.summary, maxambig=0, maxlength=275)
+```
