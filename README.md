@@ -21,6 +21,6 @@ Make input file that has read information. This makes stability.files file, whic
 make.file(input=../path/to/reads) # if gzipped, do (input=../path, type=gz)
 ```
 
-Now, make contigs from reads using make.contigs command. This prints out a list of sequence IDs and counts.
+Now, make contigs from reads using make.contigs command. This prints out a list of sequence IDs and counts, and also produces stability.trim.contigs.fasta (the actual sequence data) and stability.contigs.groups (group identity for each sequence).
 ```shell
 make.contigs(file=stability.files, processors=3)
