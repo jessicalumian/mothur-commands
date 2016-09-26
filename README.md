@@ -43,5 +43,12 @@ summary.seqs(fasta=stability.trim.contigs.fasta)
 
 Now, remove reads longer than 275 bp (or change length) and get rid of ambiguous bases:
 ```shell
-mothur > screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, summary=stability.trim.contigs.summary, maxambig=0, maxlength=275)
+screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, summary=stability.trim.contigs.summary, maxambig=0, maxlength=275)
+```
+
+## Processing improved sequences
+
+Get rid of duplicate sequences to simplify downstream computational analysis. Output is table where first column is the number of sequences characterized and second column is number of remaining sequences.
+```shell
+unique.seqs(fasta=stability.trim.contigs.good.fasta)
 ```
