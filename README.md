@@ -48,7 +48,7 @@ screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, 
 
 ## Processing improved sequences
 
-Get rid of duplicate sequences to simplify downstream computational analysis. Output is table where first column is the number of sequences characterized and second column is number of remaining sequences.
+Get rid of duplicate sequences to simplify downstream computational analysis. Output is table where first column is the number of sequences characterized and second column is number of remaining sequences. The new file `stability.trim.contigs.good.unique.fasta` is generated.
 ```shell
 unique.seqs(fasta=stability.trim.contigs.good.fasta)
 ```
