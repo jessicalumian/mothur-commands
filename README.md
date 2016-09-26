@@ -52,3 +52,12 @@ Get rid of duplicate sequences to simplify downstream computational analysis. Ou
 ```shell
 unique.seqs(fasta=stability.trim.contigs.good.fasta)
 ```
+
+Generate table with rows that are names of unique sequences and columns names of groups, table is populated with number of times each unique sequence shows up in each group.
+```shell
+count.seqs(name=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
+```
+
+Now look at table with count
+
+insert count code here
