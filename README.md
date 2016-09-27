@@ -64,8 +64,9 @@ Now look at table with summary.seqs:
 summary.seqs(count=stability.trim.contigs.good.count_table)
 ```
 
-Align sequences to reference alignmentment. **Note - need to find rumen reference from silva.**
+Align sequences to reference alignmentment. `fasta` is the SILVA database file (download the most recent version [here](http://www.mothur.org/wiki/Silva_reference_files) and put in file with data). `start` and `stop` are where sequences in alignment start and stop (must be determined ahead of time) and trims to these positions, `keepdots` refers to keeping leading and trailing periods, "." characters and it is set to false here, with the default being true.
+
 
 ```shell
-pcr.seqs(fasta=silva.bacteria.fasta, start=11894, end=25319, keepdots=F, processors=3)
+pcr.seqs(fasta=silva.nr_v123.align, start=11894, end=25319, keepdots=F, processors=3)
 ```
