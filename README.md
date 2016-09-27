@@ -58,6 +58,14 @@ Generate table with rows that are names of unique sequences and columns names of
 count.seqs(name=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
 ```
 
-Now look at table with count
+Now look at table with summary.seqs:
 
-insert count code here
+```shell
+summary.seqs(count=stability.trim.contigs.good.count_table)
+```
+
+Align sequences to reference alignmentment. **Note - need to find rumen reference from silva.**
+
+```shell
+pcr.seqs(fasta=silva.bacteria.fasta, start=11894, end=25319, keepdots=F, processors=3)
+```
