@@ -1,5 +1,13 @@
 # mothur-commands
 
+
+Start by de-interleaving reads from JGI. I am using the split-paired-reads.py script from [khmer](https://github.com/dib-lab/khmer), using khmer version 2.0 and screen version 0.9. From data directory, after creating virtual environemnt and installing khmer:
+
+```shell
+split-paired-reads.py -1 reads.1 -2 reads.2
+```
+
+
 Helpful tip - within mothur, you can do shell operations with system command. For example:
 ```shell
 mothur > system(ls) # this is for when mothur is already running
