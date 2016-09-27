@@ -70,3 +70,9 @@ Align sequences to reference alignmentment. `fasta` is the SILVA database file (
 ```shell
 pcr.seqs(fasta=silva.nr_v123.align, start=11894, end=25319, keepdots=F, processors=3)
 ```
+
+Optional: can rename pcr.out files for convenience:
+
+```shell
+system(mv ../2016-09-23-teal-tutorial/MiSeq_SOP/silva.nr_v123.pcr.align ../2016-09-23-teal-tutorial/MiSeq_SOP/silva.v4.fasta)
+```
