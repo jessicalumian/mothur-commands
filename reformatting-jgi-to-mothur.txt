@@ -1,0 +1,16 @@
+# these commands can be used to format a JGI sequint primer file to a stability.files mothur format
+
+# double all file names
+awk '/fastq.gz/ { print $0 ; print $0 }' sequnit_primer_sample.tsv > doubled-sequint_primer.tsv
+
+# combine second two columns with full info combined name
+awk '/fastq.gz/ { print $2"-"$3 }' sequnit_primer_sample.tsv > comb-column-sequnit-primers.txt
+
+# create first column file
+awk '/fastq.gz/ { print $1 }' sequnit_primer_sample.tsv > first-column-sequnit-primers.txt
+
+# change file names to R1 and R2 and double columns
+awk -F. '{ print $1"."$2"."$3"."$4"_R1_.fastq.gz" ; print $1"."$2"."$3"."$4"_R2_.fastq.gz" }' first-column-sequnit-primers.txt > doubled-first-column-sequnit-primers.txt
+
+# combine R1/R2 file with doubled column
+paste doubled-first-column-sequnit-primers.txt comb-column-sequnit-primers.txt > FINAL-stability.files
