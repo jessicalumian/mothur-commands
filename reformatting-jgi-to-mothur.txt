@@ -13,7 +13,7 @@ awk '/fastq.gz/ { print $1 }' sequnit_primer_sample.tsv > first-column-sequnit-p
 awk -F. '{ print $1"."$2"."$3"."$4"_R1_.fastq.gz" }' first-column-sequnit-primers.txt > second-column-final.txt
 
 # create third column (R2)
-awk -F. '{ print $1"."$2"."$3"."$4"_R2_.fastq.gz" }' first-column-sequnit-primers.txt > second-column-final.txt
+awk -F. '{ print $1"."$2"."$3"."$4"_R2_.fastq.gz" }' first-column-sequnit-primers.txt > third-column-final.txt
 
 # combine R1/R2 file with doubled column
-paste comb-column-sequnit-primers.txt doubled-first-column-sequnit-primers.txt  > FINAL-stability.files
+paste doubled-first-column-sequnit-primers.txt second-column-final.txt third-column-final.txt > stability.files
