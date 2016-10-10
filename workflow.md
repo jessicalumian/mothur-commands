@@ -42,4 +42,10 @@
   ```bash
   summary.seqs(fasta=stability.trim.contigs.fasta)
   ```
+  This will create `stability.trim.contigs.summary`, which contains information about each sequence.
     
+6. Clean data - get rid of sequences with ambiguous base calls, set max length to 305. **This number is currently arbitrary. Make sure to check and rerun**
+  ```bash
+  screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, maxambig=305)
+  ```
+  This uses `stability.contigs.groups` file from previous step.
