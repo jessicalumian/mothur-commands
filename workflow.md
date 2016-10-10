@@ -45,7 +45,7 @@
   This will create 
     * **stability.trim.contigs.summary** - contains information about each sequence.
     
-6. Clean data - get rid of sequences with ambiguous base calls, set max length to 305. **This number is currently arbitrary. Make sure to check and rerun**
+6. Cleaning data - get rid of sequences with ambiguous base calls, set max length to 305. **This number is currently arbitrary. Make sure to check and rerun**
   ```bash
   screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, maxambig=305)
   ```
@@ -53,3 +53,9 @@
     * **stability.contigs.good.groups** - quality filtered `stability.contigs.groups` (sanity check - make sure it's shorter than previous file)
     * **stability.trim.contigs.bad.accnos** - list of reads filtered out along with reason (ambig, length, etc)
     * **stability.trim.contigs.good.fasta** - fasta containing quality filtered reads (same sanity check as good.groups)
+
+7. Cleaning data - get rid of redundant sequences using `unique.seqs` command
+  
+  ```bash
+  unique.seqs(fasta=stability.trim.contigs.good.fasta)
+  ```
