@@ -1,10 +1,8 @@
 # these commands can be used to format a JGI sequint primer file to a stability.files mothur format
-
-# double all file names
-awk '/fastq.gz/ { print $0 ; print $0 }' sequnit_primer_sample.tsv > doubled-sequnit_primer.tsv
+# initial_names.tsv is original JGI file (or subset fiel)
 
 # combine second two columns with full info combined name, which is first column
-awk '/fastq.gz/ { print $2"-"$3 }' doubled-sequnit_primer.tsv > first-column-dash.txt
+awk '/fastq.gz/ { print $2"-"$3 }' initial_names.tsv > first-column-dash.txt
 
 # change - characters to . characters to make mothur happy
 awk -F- '{ print $1"."$2"."$3"."$4"."$5 }' first-column-dash.txt > first-column-dot.txt
@@ -16,10 +14,10 @@ tail -n+3 first-column-dot.txt > first-column.txt
 perl -p -i -e "s/\r//g" first-column.txt
 
 # create second column (R1)
-awk -F. '{ print $1"."$2"."$3"."$4"_R1_.fastq.gz" }' doubled-sequnit_primer.tsv > second-column.txt
+awk -F. '{ print $1"."$2"."$3"."$4"_R1_.fastq.gz" }' initial_names.tsv > second-column.txt
 
 # create third column (R2)
-awk -F. '{ print $1"."$2"."$3"."$4"_R2_.fastq.gz" }' doubled-sequnit_primer.tsv > third-column.txt
+awk -F. '{ print $1"."$2"."$3"."$4"_R2_.fastq.gz" }' initial_names.tsv > third-column.txt
 
 # combine columns in format: ID-name R1-filename R2-filename
 paste first-column.txt second-column.txt third-column.txt > initial-stab.txt
