@@ -80,3 +80,5 @@
   This time, `summary.seqs` is taking in the newly generated count table instead of the fasta file. Similar, but not identical, results could be obtained using the current fasta file and running `summary.seqs` with the `fasta` parameter.
   This creates:
     * **stability.trim.contigs.good.unique.summary** - summary of count report
+
+10. Primer sequences are listed [on protocol](http://1ofdmq2n8tc36m6i46scovo2e.wpengine.netdna-cdn.com/wp-content/uploads/2016/04/iTag-Sample-Amplification-QC-v1.3.pdf).
