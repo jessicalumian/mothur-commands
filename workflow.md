@@ -62,3 +62,21 @@
   This creates:
     * **stability.trim.contigs.good.names** - contains information about merged reads if they are identical
     * **stability.trim.contigs.good.unique.fasta** - fasta file containing only unique reads
+
+8. Create count table of current unique sequences
+
+  ```bash
+  count.seqs(name=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
+  ```
+  
+  This creates:
+    * **stability.trim.contigs.good.count_table** - table of all reads and which sample they appear in
+    
+9. (Optional) - can not get summaries using new count table
+
+  ```bash
+  summary.seqs(count=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
+  ```
+  This time, `summary.seqs` is taking in the newly generated count table instead of the fasta file. Similar, but not identical, results could be obtained using the current fasta file and running `summary.seqs` with the `fasta` parameter.
+  This creates:
+    * **stability.trim.contigs.good.unique.summary** - summary of count report
