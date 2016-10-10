@@ -19,3 +19,13 @@
   Note: sample duplicates (sample 1 or 2) are not currently in file names in the first column. This may need to be added.
 
 3. Demultiplex reads using `split-paired-reads.py` script in khmer. In this workflow, khmer v2.0 was installed on a virtual machine and the [de-interleavereads.sh](https://github.com/jessicamizzi/mothur-commands/blob/master/de-interleavereads.sh) script was used. (This can be done before the previous two steps)
+
+4. Navigate to mothur directory (version 1.37.2 used here). Open mothur, set input/output directory. Make sure your input directory contains demultiplexed reads and stability.files file created in steps 1 and 2. Create contigs using as many processors as you can spare. :)
+  
+  ```shell
+  ./mothur
+  set.dir(input=../path/to/input)
+  set.dir(output=../path/to/output)
+  make.contigs(file=stability.files, processors=3)
+  ```
+  Note - `make.file(inputdir=../path/to/reads, type=gz)` isn't used because stability.files has already been created in steps 1 and 2. This handy command can't be used because reads are initially interleaved and not named in a unique way.
