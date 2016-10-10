@@ -29,3 +29,17 @@
   make.contigs(file=stability.files, processors=3)
   ```
   Note - `make.file(inputdir=../path/to/reads, type=gz)` isn't used because stability.files has already been created in steps 1 and 2. This handy command can't be used because reads are initially interleaved and not named in a unique way.
+  
+  `make.contigs` creates 6 files:
+    * **stability.trim.contigs.fasta** - a FASTA file with assembled paired end sequences
+    * **stability.trim.contigs.qual** - quality score for stab.trim fasta file
+    * **stability.contigs.report** - a report for each contig, number of Ns, etc
+    * **stability.contigs.groups** - contains linker between sequence and sample
+    * **stability.scrap.contigs.fasta** - what didn't assemble
+    * **stability.scrap.contigs.qual** - quality score for what didn't assemble
+
+5. Next, get summary report on contigs.
+  ```bash
+  summary.seqs(fasta=stability.trim.contigs.fasta)
+  ```
+    
