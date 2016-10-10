@@ -59,3 +59,6 @@
   ```bash
   unique.seqs(fasta=stability.trim.contigs.good.fasta)
   ```
+  This creates:
+    * **stability.trim.contigs.good.names** - contains information about merged reads if they are identical
+    * **stability.trim.contigs.good.unique.fasta** - fasta file containing only unique reads
