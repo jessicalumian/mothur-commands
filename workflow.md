@@ -108,3 +108,9 @@
   summary.seqs(fasta=ecoli.16s.pcr.align)
   ```
   Start and end locations will be present in report printed to screen. These sequences will be used as parameters in the next command. In the case of the specific primers used in the study I'm using to write this guide, the start sequence position is 13862 and the end position is 23444 (16S V4 sequencing with JGI iTagger primers).
+
+13. Align sequences to reference alignment using start and end positions from previous step. `keepdots` is set to false to clean up output trailing dots from fragments in alignment.
+
+  ```bash
+  pcr.seqs(fasta=silva.bacteria.fasta, start=13862, end=23444, keepdots=F, processors=3)
+  ```
