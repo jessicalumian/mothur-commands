@@ -127,3 +127,11 @@
   ```bash
   summary.seqs(fasta=silva.v4.fasta)
   ```
+16. Create alignment of customized reference alignment between current contigs file and reference alignment, then run `summary.seqs` on output.
+
+  ```bash
+  align.seqs(fasta=stability.trim.contigs.good.unique.fasta, reference=silva.v4.fasta)
+  summary.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table)
+  ```
+  This creates:
+    * **stability.trim.contigs.good.unique.align** - aligned sequences from current fasta file
