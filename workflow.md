@@ -93,7 +93,7 @@
   This creates:
    * **ecoli.16s.pcr.fasta** - fasta file of 16S sequence between primers in oligos file only.
 
- 11. Now, align sequence of 16S between primers to silva reference file.
+11. Now, align sequence of 16S between primers to silva reference file.
  
   ```bash
   align.seqs(fasta=ecoli.16s.pcr.fasta, reference=silva.bacteria.fasta)
