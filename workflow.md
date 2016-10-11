@@ -144,6 +144,12 @@
   screen.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table, summary=stability.trim.contigs.good.unique.summary, start=XX, end=XX) # include maxhomp=8 if applicable
   summary.seqs(fasta=current, count=current)
   ```
+  `screen.seqs` creates:
+    * **stability.trim.contigs.good.unique.good.summary**
+    * **stability.trim.contigs.good.unique.good.align**
+    * **stability.trim.contigs.good.uniuqe.bad.accnos**
+    * **stability.trim.contigs.good.good.count_table**
+    
 18. Remove 5' and 3' sequence overhangs (shouldn't be too much of an issue because paired end sequencing was done). Also pull out alignment characters that only consist of "-". Then, rerun `unique.seqs` in case new redundant sequences were created by trimming.
 
   ```bash
