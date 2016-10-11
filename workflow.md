@@ -101,3 +101,10 @@
   This creates:
     * **ecoli.16s.pcr.align** - alignment of ecoli 16S primer sequence to silva reference file.
     * **ecoli.16s.pcr.align.report** - quality report of previous file
+    
+12. To get start and end locations, run summary.seqs on your aligned E. coli file.
+
+  ```bash
+  summary.seqs(fasta=ecoli.fasta.pcr.align)
+  ```
+  Start and end locations will be present in report printed to screen. These sequences will be used as parameters in the next command.
