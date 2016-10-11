@@ -81,4 +81,12 @@
   This creates:
     * **stability.trim.contigs.good.unique.summary** - summary of count report
 
-10. Primer sequences are listed [on protocol](http://1ofdmq2n8tc36m6i46scovo2e.wpengine.netdna-cdn.com/wp-content/uploads/2016/04/iTag-Sample-Amplification-QC-v1.3.pdf). Download E coli 16S from [NCBI genome page](https://www.ncbi.nlm.nih.gov/nuccore/174375?report=fasta). Primer sequences will be aligned to 16S sequence to determine start and end point of V4 region.
+10. Primer sequences are listed [on protocol](http://1ofdmq2n8tc36m6i46scovo2e.wpengine.netdna-cdn.com/wp-content/uploads/2016/04/iTag-Sample-Amplification-QC-v1.3.pdf). Download E coli 16S from [NCBI genome page](https://www.ncbi.nlm.nih.gov/nuccore/174375?report=fasta). Primer sequences will be aligned to 16S sequence to determine start and end point of V4 region using pcr.seqs in mothur.
+
+  First, align primers to E. coli 16S.
+
+  ```bash
+  pcr.seqs(fasta=ecoli.16s.fasta, oligos=primer.oligos)
+  ```
+  This creates:
+    * **ecoli.16s.pcr.fasta** - aligned file
