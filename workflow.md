@@ -158,8 +158,17 @@
   pre.cluster(fasta=stability.trim.contigs.good.unique.good.filter.unique.fasta, count=stability.trim.contigs.good.unique.good.filter.count_table, diffs=2)
   ```
   
-20. Now, remove chimeras using UCHIME algorithm. `dereplicate` is set to true because the MiSeq Mothur tutorial recommends this, as setting the parameter to false can remove sequences simply because they are rare. `remove.seqs` will be used to remove chimeric sequences from the count file, but will leave them in the fasta file.
+20. Now, remove chimeras using UCHIME algorithm. `dereplicate` is set to true because the MiSeq Mothur tutorial recommends this, as setting the parameter to false can remove sequences simply because they are rare. `remove.seqs` will be used to remove chimeric sequences from the count file, but will leave them in the fasta file. Finally, run `summary.seqs` to view what is left over.
 
   ```bash
   chimera.uchime(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=t)
+  remove.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, accnos=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos)
+  summary.seqs(fasta=current, count=current)
+  ```
+  
+21. Use `classify.seqs` to see if any undesired sequences have persisted in the dataset. Remove chloroplasts or mitochondria sequences with `remove.lineage` command. Make sure to download taxonomy trainset files and have them in correct directory.
+
+  ```bash
+  classify.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, reference=trainset9_032012.pds.fasta, taxonomy=trainset9_032012.pds.tax, cutoff=80)
+  remove.lineage(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)
   ```
