@@ -114,3 +114,11 @@
   ```bash
   pcr.seqs(fasta=silva.bacteria.fasta, start=13862, end=23444, keepdots=F, processors=3)
   ```
+  This creates:
+    * **silva.bacteria.pcr.fasta** - alignment of reads to database
+
+14. (Optional, but done in written instructions) Rename output file to simpler name.
+  
+  ```bash
+  system(mv silva.bacteria.pcr.fasta silva.v4.fasta)
+  ```
