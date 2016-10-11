@@ -152,4 +152,14 @@
   ```
   This produces stats showing how many columns in alignments were present and then removed.
   
-19. In case redundant sequences
+19. Next, use `pre.cluster` to further de-noise sequences. With `diffs=2`, up to two nucleotides may be different from each other in sequences and still be merged. Merges will occur using the abundances of both reads relative to each other.
+
+  ```bash
+  pre.cluster(fasta=stability.trim.contigs.good.unique.good.filter.unique.fasta, count=stability.trim.contigs.good.unique.good.filter.count_table, diffs=2)
+  ```
+  
+20. Now, remove chimeras using UCHIME algorithm. `dereplicate` is set to true because the MiSeq Mothur tutorial recommends this, as setting the parameter to false can remove sequences simply because they are rare. `remove.seqs` will be used to remove chimeric sequences from the count file, but will leave them in the fasta file.
+
+  ```bash
+  chimera.uchime(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=t)
+  ```
