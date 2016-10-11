@@ -82,11 +82,22 @@
     * **stability.trim.contigs.good.unique.summary** - summary of count report
 
 10. Primer sequences are listed [on protocol](http://1ofdmq2n8tc36m6i46scovo2e.wpengine.netdna-cdn.com/wp-content/uploads/2016/04/iTag-Sample-Amplification-QC-v1.3.pdf). Download E coli 16S from [NCBI genome page](https://www.ncbi.nlm.nih.gov/nuccore/174375?report=fasta). Primer sequences will be aligned to 16S sequence to determine start and end point of V4 region using pcr.seqs in mothur.
+  
+  First, an oligos file must be generated. Because this protocol uses paired sequences, the format `primer ATTAGAWACCCBDGTAGTCC  CCCGTCAATTCMTTTRAGT  V5` is used. [Informational page on Oligos File formats here](http://www.mothur.org/wiki/Oligos_File).
 
-  First, align primers to E. coli 16S.
+  Then, align primers to E. coli 16S.
 
   ```bash
   pcr.seqs(fasta=ecoli.16s.fasta, oligos=primer.oligos)
   ```
   This creates:
-    * **ecoli.16s.pcr.fasta** - aligned file
+   * **ecoli.16s.pcr.fasta** - fasta file of 16S sequence between primers in oligos file only.
+
+ 11. Now, align sequence of 16S between primers to silva reference file.
+ 
+  ```bash
+  align.seqs(fasta=ecoli.16s.pcr.fasta, reference=silva.bacteria.fasta)
+  ```
+  This creates:
+    * **ecoli.16s.pcr.align** - alignment of ecoli 16S primer sequence to silva reference file.
+    * **ecoli.16s.pcr.align.report** - quality report of previous file
