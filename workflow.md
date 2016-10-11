@@ -122,3 +122,8 @@
   ```bash
   system(mv silva.bacteria.pcr.fasta silva.v4.fasta)
   ```
+15. Look at summary of new silva.v4.fasta file.
+
+  ```bash
+  summary.seqs(fasta=silva.v4.fasta)
+  ```
