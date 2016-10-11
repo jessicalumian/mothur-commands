@@ -144,3 +144,12 @@
   screen.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table, summary=stability.trim.contigs.good.unique.summary, start=XX, end=XX) # include maxhomp=8 if applicable
   summary.seqs(fasta=current, count=current)
   ```
+18. Remove 5' and 3' sequence overhangs (shouldn't be too much of an issue because paired end sequencing was done). Also pull out alignment characters that only consist of "-". Then, rerun `unique.seqs` in case new redundant sequences were created by trimming.
+
+  ```bash
+  filter.seqs(fasta=stability.trim.contigs.good.unique.good.align, vertical=T, trump=.)
+  unique.seqs(fasta=stability.trim.contigs.good.unique.good.filter.fasta, count=stability.trim.contigs.good.good.count_table)
+  ```
+  This produces stats showing how many columns in alignments were present and then removed.
+  
+19. In case redundant sequences
