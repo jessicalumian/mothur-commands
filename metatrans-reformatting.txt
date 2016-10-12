@@ -1,0 +1,4 @@
+### Working with JGI_Hess_ProductNames.txt file
+
+# splitting (EC) values into new column
+awk '{sub/^(EC/," ",$1)},1' < file
