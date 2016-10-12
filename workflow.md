@@ -180,6 +180,10 @@
   ```
   
 22. It is time for clustering sequences into OTUs! `cluster.split` will be used because it has the Schloss lab seal of approval according to the tutorial and because of the large nature of this data set.
-  ```
+  ```bash
   cluster.split(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.preluster.denovo.uchime.pick.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster,pick.pds.wang.pick.pick.taxonomy, splitmethod=classify, taxlevel=4, cutoff=0.15)
+  ```
+23. Now, use `make.shared` command to determine how many sequences are in each OTU at the 0.03 cutoff level.
+  ```bash
+  make.shared(list=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.pick.taxonomy, splitmethod=classify, taxlevel=4, cutoff=0.03)
   ```
