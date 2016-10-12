@@ -160,13 +160,18 @@
   `filter.seqs` creates:
     * **stability.filter**
     * **stability.trim.contigs.good.unique.good.filter.fasta**
+    `unique.seqs` creates:
+    * **stability.trim.contigs.good.unique.good.filter.count_table**
+    * **stability.trim.contigs.good.unique.good.filter.unique.fasta**
+   
   
 19. Next, use `pre.cluster` to further de-noise sequences. With `diffs=2`, up to two nucleotides may be different from each other in sequences and still be merged. Merges will occur using the abundances of both reads relative to each other.
 
   ```bash
   pre.cluster(fasta=stability.trim.contigs.good.unique.good.filter.unique.fasta, count=stability.trim.contigs.good.unique.good.filter.count_table, diffs=2)
   ```
-  
+ **NOTE - LAST COMMAND RAN ON 10/11/16 :) **
+ 
 20. Now, remove chimeras using UCHIME algorithm. `dereplicate` is set to true because the MiSeq Mothur tutorial recommends this, as setting the parameter to false can remove sequences simply because they are rare. `remove.seqs` will be used to remove chimeric sequences from the count file, but will leave them in the fasta file. Finally, run `summary.seqs` to view what is left over.
 
   ```bash
@@ -206,6 +211,10 @@
   ```
 
 
-26. Calculate alpha diversity of samples using rarefaction command.
+26. Calculate alpha diversity of samples using rarefaction command. To standardize the acluation, use `summary.single` to randomly select XXX sequences from each sample 1000 times and calculate the average.
   ```bash
-  rarefaction.single(shared
+  rarefaction.single(shared=stability.an.shared, calc=subs, freq=100)
+  summary.single(shared=stability.an.shared, calc=seqs-coverage-sobs-invsimpson, subsample=XXX) # subsample=T
+  ```
+  `rarefaction.single` will generate `*.rarefraction` files that can be graphed in R. As a reminder, alpha diversity is a measure of richness, not diversity.
+  
