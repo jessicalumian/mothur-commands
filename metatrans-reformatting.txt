@@ -1,5 +1,9 @@
 ### Working with JGI_Hess_ProductNames.txt file
 
-# splitting (EC) values into new column
-awk '{sub/^(EC/," ",$1)},1' < file
+## splitting (EC) values into new column
+
+# syntax checking
 awk '/\(EC/ { print $0 }' subset_JGI_Hess_ProductNames.txt
+
+# sub command syntax, working on splitting now
+awk '{sub(/\(EC/," ",$1)};1' subset_JGI_Hess_ProductNames.txt
