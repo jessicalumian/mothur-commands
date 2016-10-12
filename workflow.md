@@ -218,3 +218,14 @@
   ```
   `rarefaction.single` will generate `*.rarefraction` files that can be graphed in R. As a reminder, alpha diversity is a measure of richness, not diversity.
   
+27. Create a heatmap based on beta diversity, the following command looks at the top 50 OTUs. This heatmap is good to get an idea of beta diversity, but a proper heat map should be generated using R.
+  ```bash
+  heatmap.bin(shared=stability.an.0.03.subsample.shared, scale=log2, numotu=50)
+  ```
+28. Look at similarity of membership and structure found in various samples by rarefying data. Then, visualize using `heatmap.sim`.
+  ```bash
+  dist.shared(shared=stability.an.shared, calc=thetayc-jclass, subsample=XXXX)
+  heatmap.sim(phylip=stability.an.thetayc,0.03.lt.ave.dist)
+  heatmap.sim(phylip=stability.an.jclass.0.03.lt.ave.dist)
+  ```
+  From here on, additional diagrams can be made, such as venn diagrams, parsimony pairwise comparisons, and PCoA plots.
