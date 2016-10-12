@@ -157,6 +157,9 @@
   unique.seqs(fasta=stability.trim.contigs.good.unique.good.filter.fasta, count=stability.trim.contigs.good.good.count_table)
   ```
   This produces stats showing how many columns in alignments were present and then removed.
+  `filter.seqs` creates:
+    * **stability.filter**
+    * **stability.trim.contigs.good.unique.good.filter.fasta**
   
 19. Next, use `pre.cluster` to further de-noise sequences. With `diffs=2`, up to two nucleotides may be different from each other in sequences and still be merged. Merges will occur using the abundances of both reads relative to each other.
 
