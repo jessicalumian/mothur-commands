@@ -188,7 +188,21 @@
   make.shared(list=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.pick.taxonomy, splitmethod=classify, taxlevel=4, cutoff=0.03)
   ```
 
-24. Determine taxonomy for all OTUs.
+24. Determine taxonomy for all OTUs. (YAY!!)
   ```bash
   classify.otu(list=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.list, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.pick.taxonomy, label=0.03)
   ```
+  
+25. Rename monster files for OTU-based analysis, count how many sequences are in each sample, and sub sample if this is applicable to the situation.
+  ```bash
+  system(mv ~/path/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.shared ~/path/stability.an.shared)
+  system(mv ~/path/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.0.03.cons.taxonomy ~/path/stability.an.cons.taxonomy)
+  count.groups(shared=stability.an.shared)
+  # check if sub sampling is necessary
+  sub.sample(shared=stability.an.shared, size=XXXX) # size comes from number of sequences in smallest sample
+  ```
+
+
+26. Calculate alpha diversity of samples using rarefaction command.
+  ```bash
+  rarefaction.single(shared
