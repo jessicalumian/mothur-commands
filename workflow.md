@@ -196,7 +196,10 @@
   classify.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, reference=silva.nr_v123.align, taxonomy=silva.nr_v123.tax, cutoff=80)
   remove.lineage(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)
   ```
-  
+  `classify.seqs` creates:
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_n123.wang.taxonomy**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_v123.wang.tax.summary**
+    
 22. It is time for clustering sequences into OTUs! `cluster.split` will be used because it has the Schloss lab seal of approval according to the tutorial and because of the large nature of this data set.
   ```bash
   cluster.split(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.preluster.denovo.uchime.pick.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster,pick.pds.wang.pick.pick.taxonomy, splitmethod=classify, taxlevel=4, cutoff=0.15)
