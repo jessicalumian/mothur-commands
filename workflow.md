@@ -267,7 +267,7 @@
   
 27. Create a heatmap based on beta diversity, the following command looks at the top 50 OTUs. This heatmap is good to get an idea of beta diversity, but a proper heat map should be generated using R.
   ```bash
-  heatmap.bin(shared=stability.an.0.03.subsample.shared, scale=log2, numotu=50)
+  heatmap.bin(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.0.03.subsample.shared, scale=log2, numotu=50)
   ```
 28. Look at similarity of membership and structure found in various samples by rarefying data. Then, visualize using `heatmap.sim`.
   ```bash
