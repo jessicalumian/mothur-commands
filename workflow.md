@@ -237,9 +237,9 @@
   
 25. Rename monster files for OTU-based analysis, count how many sequences are in each sample, and sub sample if this is applicable to the situation.
   ```bash
-  system(mv ~/path/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.shared ~/path/stability.an.shared)
-  system(mv ~/path/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.0.03.cons.taxonomy ~/path/stability.an.cons.taxonomy)
-  count.groups(shared=stability.an.shared)
+  # note - maybe don't do this to keep things less confusing # system(mv ~/path/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.shared ~/path/stability.an.shared)
+  # ditto from above # system(mv ~/path/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.0.03.cons.taxonomy ~/path/stability.an.cons.taxonomy)
+  count.groups(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared)
   # check if sub sampling is necessary
   sub.sample(shared=stability.an.shared, size=XXXX) # size comes from number of sequences in smallest sample
   ```
