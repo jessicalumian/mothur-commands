@@ -194,11 +194,16 @@
 
   ```bash
   classify.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, reference=silva.nr_v123.align, taxonomy=silva.nr_v123.tax, cutoff=80)
-  remove.lineage(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_v123.want.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Eukaryota)
+  remove.lineage(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_v123.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Eukaryota)
   ```
   `classify.seqs` creates:
     * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_n123.wang.taxonomy**
     * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_v123.wang.tax.summary**
+    
+  `remove.lineage` creates:
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_v123.wang.pick.taxonomy**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table**
     
 22. It is time for clustering sequences into OTUs! `cluster.split` will be used because it has the Schloss lab seal of approval according to the tutorial and because of the large nature of this data set.
   ```bash
