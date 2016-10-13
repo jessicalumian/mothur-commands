@@ -182,10 +182,13 @@
   remove.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, accnos=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos)
   summary.seqs(fasta=current, count=current)
   ```
-  This creates:
+  `chimera.uchime` creates:
     * **stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.unchime.pick.count_table**
-    * **stability.trim.contigs.good.unqiue.good.filter.unique.precluster.denovo.uchime.chimeras
+    * **stability.trim.contigs.good.unqiue.good.filter.unique.precluster.denovo.uchime.chimeras**
     * **stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos**
+    
+   `remove.seqs` creates:
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta**
   
 21. Use `classify.seqs` to see if any undesired sequences have persisted in the dataset. Remove chloroplasts or mitochondria sequences with `remove.lineage` command. Make sure to download taxonomy trainset files and have them in correct directory.
 
