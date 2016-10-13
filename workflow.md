@@ -216,6 +216,10 @@
   ```bash
   cluster.split(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_v123.wang.pick.taxonomy, splitmethod=classify, taxlevel=4, cutoff=0.15)
   ```
+  
+  `cluster.split` creates:
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.list**
+    
 23. Now, use `make.shared` command to determine how many sequences are in each OTU at the 0.03 cutoff level.
   ```bash
   make.shared(list=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.pick.taxonomy, splitmethod=classify, taxlevel=4, cutoff=0.03)
