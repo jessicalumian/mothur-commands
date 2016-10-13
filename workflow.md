@@ -224,6 +224,8 @@
   ```bash
   make.shared(list=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.list, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table, label=0.03)
   ```
+  This creates:
+  * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared**
 
 24. Determine taxonomy for all OTUs. (YAY!!)
   ```bash
