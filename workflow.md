@@ -241,7 +241,7 @@
   # ditto from above # system(mv ~/path/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.0.03.cons.taxonomy ~/path/stability.an.cons.taxonomy)
   count.groups(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared)
   # check if sub sampling is necessary
-  sub.sample(shared=stability.an.shared, size=327912) # size comes from number of sequences in smallest sample
+  sub.sample(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, size=327912) # size comes from number of sequences in smallest sample
   ```
   
   `count.groups` creates:
