@@ -248,12 +248,14 @@
     * **subset-CS-Y-16S-reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.count.summary**
     
     In subset, group with smallest number of samples is 327912, so that number is in sub.sample command. This was determined by the output of count.groups.
-
+    
+    `sub.sample` creates:
+     * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.0.03.subsample.shared**
 
 26. Calculate alpha diversity of samples using rarefaction command. To standardize the acluation, use `summary.single` to randomly select XXX sequences from each sample 1000 times and calculate the average.
   ```bash
-  rarefaction.single(shared=stability.an.shared, calc=subs, freq=100)
-  summary.single(shared=stability.an.shared, calc=seqs-coverage-sobs-invsimpson, subsample=XXX) # subsample=T
+  rarefaction.single(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=subs, freq=100)
+  summary.single(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=seqs-coverage-sobs-invsimpson, subsample=327912) # subsample=T
   ```
   `rarefaction.single` will generate `*.rarefraction` files that can be graphed in R. As a reminder, alpha diversity is a measure of richness, not diversity.
   
