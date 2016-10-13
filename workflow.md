@@ -1,5 +1,12 @@
 # Mothur workflow using JGI iTagger Data
 
+## Stuff to download before beginning
+
+1. [SILVA-based bacterial reference alignment](http://www.mothur.org/w/images/9/98/Silva.bacteria.zip)
+   * more information on this on the [mothur MiSeq SOP](http://www.mothur.org/wiki/MiSeq_SOP)
+2. [Full length sequences and taxonomy references - Silva v1.2.3](http://www.mothur.org/w/images/b/be/Silva.nr_v123.tgz)
+   * more information on this on the [Silva Reference Files informational page](http://www.mothur.org/wiki/Silva_reference_files)
+
 ## Preparing files
 
 1. Acquire `sequnit_primer_sample.tsv` file from JGI which is in the following format:
