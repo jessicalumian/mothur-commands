@@ -241,8 +241,13 @@
   # ditto from above # system(mv ~/path/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.an.unique_list.0.03.cons.taxonomy ~/path/stability.an.cons.taxonomy)
   count.groups(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared)
   # check if sub sampling is necessary
-  sub.sample(shared=stability.an.shared, size=XXXX) # size comes from number of sequences in smallest sample
+  sub.sample(shared=stability.an.shared, size=327912) # size comes from number of sequences in smallest sample
   ```
+  
+  `count.groups` creates:
+    * **subset-CS-Y-16S-reads/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.count.summary**
+    
+    In subset, group with smallest number of samples is 327912, so that number is in sub.sample command. This was determined by the output of count.groups.
 
 
 26. Calculate alpha diversity of samples using rarefaction command. To standardize the acluation, use `summary.single` to randomly select XXX sequences from each sample 1000 times and calculate the average.
