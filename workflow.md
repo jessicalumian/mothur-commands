@@ -269,6 +269,9 @@
   ```bash
   heatmap.bin(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.0.03.subsample.shared, scale=log2, numotu=50)
   ```
+  
+  This will generate a `.bin.svg` heatmap file. Last thing ran on 10/13/16.
+  
 28. Look at similarity of membership and structure found in various samples by rarefying data. Then, visualize using `heatmap.sim`.
   ```bash
   dist.shared(shared=stability.an.shared, calc=thetayc-jclass, subsample=XXXX)
