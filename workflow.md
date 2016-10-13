@@ -257,8 +257,13 @@
   rarefaction.single(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=sobs, freq=100)
   summary.single(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=nseqs-coverage-sobs-invsimpson, subsample=327912) # subsample=T
   ```
-  `rarefaction.single` will generate:
+  `rarefaction.single` will create:
     * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.groups.rarefaction**, which  can be graphed in R. As a reminder, alpha diversity is a measure of richness, not diversity.
+    
+   `summary.single` will create:
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.groups.ave-std.summary**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.groups.summary**
+   
   
 27. Create a heatmap based on beta diversity, the following command looks at the top 50 OTUs. This heatmap is good to get an idea of beta diversity, but a proper heat map should be generated using R.
   ```bash
