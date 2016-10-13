@@ -254,7 +254,7 @@
 
 26. Calculate alpha diversity of samples using rarefaction command. To standardize the acluation, use `summary.single` to randomly select XXX sequences from each sample 1000 times and calculate the average.
   ```bash
-  rarefaction.single(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=subs, freq=100)
+  rarefaction.single(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=sobs, freq=100)
   summary.single(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=seqs-coverage-sobs-invsimpson, subsample=327912) # subsample=T
   ```
   `rarefaction.single` will generate `*.rarefraction` files that can be graphed in R. As a reminder, alpha diversity is a measure of richness, not diversity.
