@@ -270,12 +270,12 @@
   heatmap.bin(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.0.03.subsample.shared, scale=log2, numotu=50)
   ```
   
-  This will generate a `.bin.svg` heatmap file. Last thing ran on 10/13/16.
+  This will generate a `.bin.svg` heatmap file.
   
 28. Look at similarity of membership and structure found in various samples by rarefying data. Then, visualize using `heatmap.sim`.
   ```bash
-  dist.shared(shared=stability.an.shared, calc=thetayc-jclass, subsample=XXXX)
-  heatmap.sim(phylip=stability.an.thetayc,0.03.lt.ave.dist)
-  heatmap.sim(phylip=stability.an.jclass.0.03.lt.ave.dist)
+  dist.shared(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=thetayc-jclass, subsample=327912)
+  heatmap.sim(phylip=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.thetayc,0.03.lt.ave.dist)
+  heatmap.sim(phylip=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.jclass.0.03.lt.ave.dist)
   ```
   From here on, additional diagrams can be made, such as venn diagrams, parsimony pairwise comparisons, and PCoA plots.
