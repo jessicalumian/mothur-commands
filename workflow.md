@@ -278,4 +278,12 @@
   heatmap.sim(phylip=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.thetayc,0.03.lt.ave.dist)
   heatmap.sim(phylip=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.jclass.0.03.lt.ave.dist)
   ```
+  
+  `dist.shared` creates:
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.thetayc.0.03.lt.dist**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.jclass.0.03.lt.dist**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.thetayc.0.03.lt.ave.dist**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.thetayc.0.03.lt.std.dist**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.jclass.0.03.lt.ave.dist**
+    * **stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.jclass.0.03.lt.std.dist**
   From here on, additional diagrams can be made, such as venn diagrams, parsimony pairwise comparisons, and PCoA plots.
