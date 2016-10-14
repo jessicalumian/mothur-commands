@@ -274,9 +274,11 @@
   
 28. Look at similarity of membership and structure found in various samples by rarefying data. Then, visualize using `heatmap.sim`.
   ```bash
+  # calculate values
   dist.shared(shared=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.shared, calc=thetayc-jclass, subsample=327912)
-  heatmap.sim(phylip=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.thetayc,0.03.lt.ave.dist)
-  heatmap.sim(phylip=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.jclass.0.03.lt.ave.dist)
+  # create heatmaps to visualize
+  heatmap.sim(phylip=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.thetayc.0.03.lt.ave.dist)
+  heatmap.sim(phylip=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.jclass.0.03.lt.ave.dist)
   ```
   
   `dist.shared` creates:
