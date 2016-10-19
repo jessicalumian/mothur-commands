@@ -26,6 +26,7 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
 1. Install (for Ubuntu 14.04) on s3fs
 
   ```shell
+  sudo apt-get update
   sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
   ```
   
