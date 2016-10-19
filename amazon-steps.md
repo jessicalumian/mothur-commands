@@ -20,3 +20,28 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
 
 7. Copy over mothur stability.batch.amazon.1 and run it with 
 
+
+Use s3fs to access bucket. Information [here](https://github.com/s3fs-fuse/s3fs-fuse).
+
+1. Install (for Ubuntu 14.04) on s3fs
+
+  ```shell
+  sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+  ```
+  
+2. Clone repo and install
+
+  ```shell
+  git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+  cd s3fs-fuse
+  ./autogen.sh
+  ./configure
+  make
+  sudo make install
+  ```
+  
+3. Enter S3 identity and credential
+
+  ```shell
+  echo MYIDENTITY:MYCREDENTIAL > ~/.credentials.aws.cow
+  ```
