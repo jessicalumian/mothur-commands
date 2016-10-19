@@ -54,7 +54,7 @@
     
 6. Cleaning data - get rid of sequences with ambiguous base calls, set max length to 305. **This number is currently arbitrary. Make sure to check and rerun**
   ```bash
-  screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, maxambig=305)
+  screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, maxambig=0, maxlength=275)
   ```
   This uses `stability.contigs.groups` file from previous step. This creates the following files:
     * **stability.contigs.good.groups** - quality filtered `stability.contigs.groups` (sanity check - make sure it's shorter than previous file)
