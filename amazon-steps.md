@@ -21,7 +21,7 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
 7. Copy over mothur stability.batch.amazon.1 and run it with 
 
 
-Use s3fs to access bucket. Information [here](https://github.com/s3fs-fuse/s3fs-fuse).
+## Use s3fs to access bucket. Information [here](https://github.com/s3fs-fuse/s3fs-fuse).
 
 1. Install (for Ubuntu 14.04) on s3fs
 
@@ -44,4 +44,23 @@ Use s3fs to access bucket. Information [here](https://github.com/s3fs-fuse/s3fs-
 
   ```shell
   echo MYIDENTITY:MYCREDENTIAL > ~/.credentials.aws.cow
+  ```
+4. Change permissions, create contact point
+
+  ```shell
+  chmod 600 ~/.credentials.aws.cow
+  sudo mkdir /s3
+  ```
+
+5. Run s3fs with exisiting bucket (cow) and mount point (/s3 dir)
+
+  ```shell
+   sudo s3fs cow-rumen-jgi-itagger-16s-18s-its2-temporal-hess /s3 -o passwd_file=~/.credentials.aws.cow
+  ```
+  
+6. Now, you can see your files in `/s3` and cp so you can work with it. This is cheaper than working with files directly from the s3 bucket.
+
+  ```shell
+  sudo ls /s3
+  # now, cp data to another location so you can work with it!
   ```
