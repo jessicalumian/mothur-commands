@@ -41,7 +41,7 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
   sudo make install
   ```
   
-3. Enter S3 identity and credential
+3. Enter S3 identity and credential (stored in rootkey.csv)
 
   ```shell
   echo MYIDENTITY:MYCREDENTIAL > ~/.credentials.aws.cow
