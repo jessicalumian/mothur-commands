@@ -59,9 +59,10 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
    sudo s3fs cow-rumen-jgi-itagger-16s-18s-its2-temporal-hess /s3 -o passwd_file=~/.credentials.aws.cow
   ```
   
-6. Now, you can see your files in `/s3` and cp so you can work with it. This is cheaper than working with files directly from the s3 bucket.
+6. Now, you can see your files in `/s3` and cp so you can work with it. This is cheaper than working with files directly from the s3 bucket. Also start screen at this point.
 
   ```shell
   sudo ls /s3
-  # now, cp data to another location so you can work with it!
+  screen
+  for f in $(sudo ls /s3); do sudo cp /s3/$f mothur/data ; done
   ```
