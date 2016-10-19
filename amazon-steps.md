@@ -27,7 +27,7 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
 
   ```shell
   sudo apt-get update
-  sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+  sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config screen
   ```
   
 2. Clone repo and install
@@ -66,3 +66,4 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
   screen
   for f in $(sudo ls /s3); do sudo cp /s3/$f mothur/data ; done
   ```
+7. Move `stability.files` to aws (in repo)
