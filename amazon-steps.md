@@ -29,8 +29,18 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
   sudo apt-get update
   sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config screen
   ```
-  
-2. Clone repo and install
+2. Install khmer
+
+  ```shell
+  cd ~/
+  python2.7 -m virtualenv work
+  source work/bin/activate
+  pip install -U setuptools
+  git clone https://github.com/dib-lab/khmer.git
+  cd khmer
+  make install
+  ```
+3. Clone repo and install
 
   ```shell
   git clone https://github.com/s3fs-fuse/s3fs-fuse.git
@@ -41,29 +51,37 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
   sudo make install
   ```
   
-3. Enter S3 identity and credential (stored in rootkey.csv)
+4. Enter S3 identity and credential (stored in rootkey.csv)
 
   ```shell
   echo MYIDENTITY:MYCREDENTIAL > ~/.credentials.aws.cow
   ```
-4. Change permissions, create contact point
+5. Change permissions, create contact point
 
   ```shell
   chmod 600 ~/.credentials.aws.cow
   sudo mkdir /s3
   ```
 
-5. Run s3fs with exisiting bucket (cow) and mount point (/s3 dir)
+6. Run s3fs with exisiting bucket (cow) and mount point (/s3 dir)
 
   ```shell
    sudo s3fs cow-rumen-jgi-itagger-16s-18s-its2-temporal-hess /s3 -o passwd_file=~/.credentials.aws.cow
   ```
   
-6. Now, you can see your files in `/s3` and cp so you can work with it. This is cheaper than working with files directly from the s3 bucket. Also start screen at this point.
+7. Now, you can see your files in `/s3` and cp so you can work with it. This is cheaper than working with files directly from the s3 bucket. Also start screen at this point.
 
   ```shell
   sudo ls /s3
   screen
   for f in $(sudo ls /s3); do sudo cp /s3/$f mothur/data ; done
   ```
-7. Move `stability.files` to aws (in repo)
+8. Move `stability.files` and batch file to aws (in repo)
+
+9. Interleave reads using interleave-reads.sh script
+
+10. In `mothur/data`, have `stability.files` and batch file. Then start mothur.
+
+  ```shell
+  mothur stability.batch.file.name.goes.here
+  ```
