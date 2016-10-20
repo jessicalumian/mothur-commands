@@ -49,8 +49,8 @@
     
     ```bash
     awk '/16S/ { print $0 }' > 16S.stability.contigs.groups
-    awk '/18S/ { print $0 }' > 16S.stability.contigs.groups
-    awk '/ITS/ { print $0 }' > 16S.stability.contigs.groups
+    awk '/18S/ { print $0 }' > 18S.stability.contigs.groups
+    awk '/ITS/ { print $0 }' > ITS.stability.contigs.groups
     ```
 5. Next, get summary report on contigs.
   ```bash
