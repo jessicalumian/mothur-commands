@@ -74,7 +74,7 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
   ```shell
   sudo ls /s3
   screen
-  for f in $(sudo ls /s3); do sudo cp /s3/$f mothur/data ; done
+  for f in $(sudo ls /s3); do sudo cp /s3/$f mothur/data &; done
   ```
 8. Move `stability.files` and batch file to aws (in repo)
 
