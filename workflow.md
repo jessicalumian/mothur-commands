@@ -48,9 +48,9 @@
     At this point with the full data set, I created separate group files for each sequencing type, 16S, 18S, and ITS2. This is done in bash, **not in mothur**.
     
     ```bash
-    awk '/16S/ { print $0 } > 16S.stability.contigs.groups
-    awk '/18S/ { print $0 } > 16S.stability.contigs.groups
-    awk '/ITS/ { print $0 } > 16S.stability.contigs.groups
+    awk '/16S/ { print $0 }' > 16S.stability.contigs.groups
+    awk '/18S/ { print $0 }' > 16S.stability.contigs.groups
+    awk '/ITS/ { print $0 }' > 16S.stability.contigs.groups
     ```
 5. Next, get summary report on contigs.
   ```bash
