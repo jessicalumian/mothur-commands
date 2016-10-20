@@ -27,9 +27,16 @@ More info here: [http://mothur.org/wiki/Mothur_AMI](http://mothur.org/wiki/Mothu
 
   ```shell
   sudo apt-get update
-  sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config screen
+  sudo apt-get install -y automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config screen python-pip python-dev
   ```
-2. Install khmer
+2. Install khmer 
+
+  ```shell
+  sudo pip install -U setuptools
+  sudo pip install khmer==2.0
+  ```
+  
+  or
 
   ```shell
   cd ~/
