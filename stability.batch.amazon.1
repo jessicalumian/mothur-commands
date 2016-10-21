@@ -24,8 +24,11 @@ unique.seqs(fasta=stability.trim.contigs.good.fasta)
 count.seqs(name=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
 
 ## Step 9 - again, get summary of reads, now they are quality filtered and non redundant
-summary.seqs(count=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
-
-# or
 
 summary.seqs(count=stability.trim.contigs.good.count_table)
+
+## Step 10 - begin selecting for 16S files - align used primers to ecoli 16S and only include region between primers, file descriptions in workflow.md, step 10.
+
+pcr.seqs(fasta=ecoli.16s.fasta, oligos=primer.oligos)
+
+## align used primers to ecoli 16S
