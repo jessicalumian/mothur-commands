@@ -31,4 +31,6 @@ summary.seqs(count=stability.trim.contigs.good.count_table)
 
 pcr.seqs(fasta=ecoli.16s.fasta, oligos=primer.oligos)
 
-## align used primers to ecoli 16S
+## Step 11 - align ecoli primer'ed region to silva database (have silva database in /data directory)
+
+align.seqs(fasta=ecoli.16s.pcr.fasta, reference=~/mothur/data/silva.bacteria/silva.bacteria.fasta)
