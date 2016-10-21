@@ -14,8 +14,8 @@ make.contigs(file=stability.files, processors=16)
 ## Step 5 - initial summary stats
 summary.seqs(fasta=stability.trim.contigs.fasta)
 
-## Step 6 - get rid of ambiguous base calls and setting max length to 275 (same as mothur SOP)
-screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, maxambig=0, maxlength=275)
+## Step 6 - get rid of ambiguous base calls and setting max length to 325 (ambiguous)
+screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, maxambig=0, maxlength=325)
 
 ## Step 7 - get rid of redundant sequences
 unique.seqs(fasta=stability.trim.contigs.good.fasta)
