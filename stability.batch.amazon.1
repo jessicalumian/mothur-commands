@@ -34,3 +34,11 @@ pcr.seqs(fasta=ecoli.16s.fasta, oligos=primer.oligos)
 ## Step 11 - align ecoli primer'ed region to silva database (have silva database in /data directory)
 
 align.seqs(fasta=ecoli.16s.pcr.fasta, reference=~/mothur/data/silva.bacteria/silva.bacteria.fasta)
+
+## Step 12 - get locations on fasta with ecoli alignment
+
+summary.seqs(fasta=ecoli.16s.pcr.align)
+
+## Step 13 - align sequences to reference alignment
+
+pcr.seqs(fasta=~/mothur/data/silva.bacteria/silva.bacteria.fasta, start=13862, end=23444, keepdots=F, processors=16)
