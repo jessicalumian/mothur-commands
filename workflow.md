@@ -86,10 +86,10 @@
   This creates:
     * **stability.trim.contigs.good.count_table** - table of all reads and which sample they appear in
     
-9. (Optional) - can not get summaries using new count table
+9. Get summaries using new count table
 
   ```bash
-  summary.seqs(count=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
+  summary.seqs(count=stability.trim.contigs.good.count_table)
   ```
   This time, `summary.seqs` is taking in the newly generated count table instead of the fasta file. Similar, but not identical, results could be obtained using the current fasta file and running `summary.seqs` with the `fasta` parameter.
   This creates:
