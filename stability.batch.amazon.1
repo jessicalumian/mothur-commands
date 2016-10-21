@@ -42,3 +42,13 @@ summary.seqs(fasta=ecoli.16s.pcr.align)
 ## Step 13 - align sequences to reference alignment
 
 pcr.seqs(fasta=~/mothur/data/silva.bacteria/silva.bacteria.fasta, start=13862, end=23444, keepdots=F, processors=16)
+
+## Step 14 - summary of output
+
+summary.seqs(fasta=~/mothur/data/silva.bacteria.pcr.fasta)
+
+## Step 15 - Create alignment of customized reference alignment between current contigs file and reference alignment, then run summary.seqs on output.
+
+align.seqs(fasta=stability.trim.contigs.good.unique.fasta, reference=~/mothur/data/silva.bacteria.pcr.fasta)
+summary.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table
+
