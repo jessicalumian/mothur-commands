@@ -61,3 +61,7 @@ summary.seqs(fasta=current, count=current)
 
 filter.seqs(fasta=stability.trim.contigs.good.unique.good.align, vertical=T, trump=.)
 unique.seqs(fasta=stability.trim.contigs.good.unique.good.filter.fasta, count=stability.trim.contigs.good.good.count_table)
+
+## Step 18 - Further de-noise and prep for OTU picking
+
+pre.cluster(fasta=stability.trim.contigs.good.unique.good.filter.unique.fasta, count=stability.trim.contigs.good.unique.good.filter.count_table, diffs=2)
