@@ -152,7 +152,7 @@
     * **stability.trim.contigs.good.unique.align.report** - quality report of previous sequences
     * **stability.trim.contigs.good.unique.flip.accnos** - filtered sequences
 
-17. Again, screen sequences based on output of file (predominant start and stop numbers in summary seqs). Look into max homopolymer length parameter for specific dataset. Then, run another summary sequences command.
+17. Screen out seqs that are before or after the sites of the alignment from the previous step. The `start` and `stop` sites Again, screen sequences based on output of file (predominant start and stop numbers in summary seqs). Look into max homopolymer length parameter for specific dataset. Then, run another summary sequences command.
 
   ```bash
   screen.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table, summary=stability.trim.contigs.good.unique.summary, start=XX, end=XX) # include maxhomp=8 if applicable
