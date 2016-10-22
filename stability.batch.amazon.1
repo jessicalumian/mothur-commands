@@ -52,6 +52,7 @@ summary.seqs(fasta=~/mothur/data/silva.bacteria.pcr.fasta)
 align.seqs(fasta=stability.trim.contigs.good.unique.fasta, reference=~/mothur/data/silva.bacteria.pcr.fasta)
 summary.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table
 
-## Step 16 - 
+## Step 16 - START AND STOP COMES FROM PREVIOUS STEP - this step again screens seqs, then take another summary report
 
 screen.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table, summary=stability.trim.contigs.good.unique.summary, start=8, end=9582) # include maxhomp=8 if applicable
+summary.seqs(fasta=current, count=current)
