@@ -65,3 +65,7 @@ unique.seqs(fasta=stability.trim.contigs.good.unique.good.filter.fasta, count=st
 ## Step 18 - Further de-noise and prep for OTU picking
 
 pre.cluster(fasta=stability.trim.contigs.good.unique.good.filter.unique.fasta, count=stability.trim.contigs.good.unique.good.filter.count_table, diffs=2)
+
+## Step 19 - Remove chimeras with uchime
+
+chimera.uchime(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=t)
