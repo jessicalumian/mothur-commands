@@ -69,3 +69,4 @@ pre.cluster(fasta=stability.trim.contigs.good.unique.good.filter.unique.fasta, c
 ## Step 19 - Remove chimeras with uchime
 
 chimera.uchime(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=t)
+remove.seqs(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.fasta, accnos=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos)
