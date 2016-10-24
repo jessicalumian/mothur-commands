@@ -1,4 +1,9 @@
 # stability batch 1
+
+# These steps are universal for rumen data (which has 16S, 18S, and ITS). These preprocessing steps
+# don't involve reference databases or organisms, so the commands run on each dataset after this
+# will split.
+
 # covers steps 1-9 on github.com/jessicamizzi/mothur-commands/blob/master/workflow.mdn
 # setting directory, making contigs, summary, screening, unique, count, summary
 # note - numbers match github repo steps, so numbering starts at 3.
