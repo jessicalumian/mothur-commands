@@ -80,3 +80,7 @@ remove.lineage(fasta=stability.trim.contigs.good.unique.good.filter.unique.precl
 ## Step 21 - Cluster OTUs
 
 cluster.split(fasta=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table, taxonomy=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.nr_v123.wang.pick.taxonomy, splitmethod=classify, taxlevel=4, cutoff=0.15)
+
+## Step 22 - Determine how many OTUs are at 0.03 level (97% similarity) - not run yet
+
+make.shared(list=stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.list, count=stability.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table, label=0.03)
